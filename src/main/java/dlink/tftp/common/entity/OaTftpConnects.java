@@ -1,12 +1,14 @@
 package dlink.tftp.common.entity;
 
 import dlink.tftp.common.model.TftpConnects;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Date;
+/**
+ * Created by Chenlv on 2018.5.25.
+ */
 
 @Entity
 @Table(name = "tftp_connects")

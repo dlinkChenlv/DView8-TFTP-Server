@@ -3,7 +3,7 @@ package dlink.tftp.common.model;
 import java.sql.Timestamp;
 
 /**
- * Created by 91680 on 2018.5.25.
+ * Created by Chenlv on 2018.5.25.
  */
 public class TftpConnects {
     /**
