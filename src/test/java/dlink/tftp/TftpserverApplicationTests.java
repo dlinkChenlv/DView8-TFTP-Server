@@ -1,6 +1,6 @@
 package dlink.tftp;
 
-import dlink.tftp.server.core.TFTPUDPServer;
+import dlink.tftp.server.TftpServer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,7 @@ public class TftpserverApplicationTests {
 	@Test
 	public void contextLoads() {
 		System.out.print(USER_NAME+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		TFTPUDPServer server = new TFTPUDPServer(Integer.valueOf(USER_NAME));
+		TftpServer server = new TftpServer(Integer.valueOf(USER_NAME));
 		server.start();
 	}
 
