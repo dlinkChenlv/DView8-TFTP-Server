@@ -16,6 +16,15 @@ public class TftpConfiguration {
     private static int timeout;//重发超时时间
     private static int max_packet_length;//数据包的长度
     private static String current_directory;//默认的本地文件路径
+    public static void inint(){
+        TftpConfiguration.current_directory = propertiesUtil.getPro("tftp.current_directory");
+        TftpConfiguration.default_server_port = Integer.valueOf(propertiesUtil.getPro("tftp.default_server_port"));
+        TftpConfiguration.max_packet_length = Integer.valueOf(propertiesUtil.getPro("tftp.max_packet_length"));
+        TftpConfiguration.max_data_length = Integer.valueOf(propertiesUtil.getPro("tftp.max_data_length"));
+        TftpConfiguration.max_timeouts = Integer.valueOf(propertiesUtil.getPro("tftp.max_timeouts"));
+        TftpConfiguration.max_invalids = Integer.valueOf(propertiesUtil.getPro("tftp.max_invalids"));
+        TftpConfiguration.timeout = Integer.valueOf(propertiesUtil.getPro("tftp.timeout"));
+    }
     @Value("${tftp.current_directory}")
     public void setCurrent_directory(String current_directory) {
         TftpConfiguration.current_directory = current_directory;

@@ -26,6 +26,9 @@ public class packageStatistics {
     }
     public static boolean processReceives(DatagramPacket rcvDatagram,int blockNumber,int blockErrNumber) throws TFTPException{
         TFTPPacket packet = UDPUtil.fromDatagram(rcvDatagram);
+        if(allBlockNumber==blockNumber){
+            blockNumber=0;
+        }
         switch (packet.getPacketType()) {
             case ACKNOWLEDGEMENT:
                 LOGGER.info("send success "+blockNumber+" package,and a total of "+allBlockNumber+" packages.");
@@ -40,6 +43,7 @@ public class packageStatistics {
                 LOGGER.info("received packet " + packet + ", ignoring");
                 return false;
         }
+
     }
     public static boolean processSents(DatagramPacket rcvDatagram,int blockNumber,int blockErrNumber) throws TFTPException{
         TFTPPacket packet = UDPUtil.fromDatagram(rcvDatagram);
